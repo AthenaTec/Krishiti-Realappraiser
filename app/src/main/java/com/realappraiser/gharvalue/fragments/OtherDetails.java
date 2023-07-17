@@ -178,6 +178,12 @@ public class OtherDetails extends Fragment implements View.OnClickListener, Othe
     public static EditText editText_addr_site;
     @BindView(R.id.editText_landmark)
     EditText editText_landmark;
+
+    @BindView(R.id.editText_relation_with_owner)
+    EditText etRelationWithOwner;
+
+    @BindView(R.id.editText_name_of_occupant)
+    EditText etNameOfOccupant;
     @BindView(R.id.editText_servey_persence)
     EditText editText_survey_persence;
     @BindView(R.id.editText_plotno)
@@ -1398,6 +1404,8 @@ public class OtherDetails extends Fragment implements View.OnClickListener, Othe
         editText_addr_perdoc.setTypeface(general.regulartypeface());
         editText_addr_site.setTypeface(general.regulartypeface());
         editText_landmark.setTypeface(general.regulartypeface());
+        etNameOfOccupant.setTypeface(general.regularTypeface());
+        etRelationWithOwner.setTypeface(general.regularTypeface());
         editText_survey_persence.setTypeface(general.regulartypeface());
         editText_plotno.setTypeface(general.regulartypeface());
         editText_db_east.setTypeface(general.regulartypeface());
@@ -2248,6 +2256,23 @@ public class OtherDetails extends Fragment implements View.OnClickListener, Othe
                 Singleton.getInstance().property.setLandmark("");
             }
 
+            String nameOfOccupant = etNameOfOccupant.getText().toString().trim();
+            if (!general.isEmpty(nameOfOccupant)) {
+                Singleton.getInstance().property.setNameOfOccupant(nameOfOccupant);
+            } else {
+                Singleton.getInstance().property.setNameOfOccupant("");
+            }
+
+            Log.e("OtherDetailsProperty","Set nameOccupant"+nameOfOccupant);
+
+            String relationWithOwner = etRelationWithOwner.getText().toString().trim();
+            if (!general.isEmpty(relationWithOwner)) {
+                Singleton.getInstance().property.setRelationWithOwner(relationWithOwner);
+            } else {
+                Singleton.getInstance().property.setRelationWithOwner("");
+            }
+
+            Log.e("OtherDetailsProperty","set RelationOwner"+relationWithOwner);
 
             surveypresence = editText_survey_persence.getText().toString().trim();
             if (!general.isEmpty(surveypresence)) {
@@ -4011,6 +4036,17 @@ public class OtherDetails extends Fragment implements View.OnClickListener, Othe
             editText_addr_site.setText(Singleton.getInstance().property.getPropertyAddressAtSite());
         if (Singleton.getInstance().property.getLandmark() != null)
             editText_landmark.setText(Singleton.getInstance().property.getLandmark());
+        if(Singleton.getInstance().property.getNameOfOccupant()!=null)
+            etNameOfOccupant.setText(Singleton.getInstance().property.getNameOfOccupant());
+
+        Log.e("OtherDetailsProperty","Get nameOccupant"+Singleton.getInstance().property.getNameOfOccupant());
+
+        if(Singleton.getInstance().property.getRelationWithOwner()!=null)
+            etRelationWithOwner.setText(Singleton.getInstance().property.getRelationWithOwner());
+
+        Log.e("OtherDetailsProperty","Get Relation"+Singleton.getInstance().property.getRelationWithOwner());
+
+
         if (Singleton.getInstance().property.getSurveyInPresenceOf() != null)
             editText_survey_persence.setText(Singleton.getInstance().property.getSurveyInPresenceOf());
         if (Singleton.getInstance().property.getPlotNo() != null)

@@ -377,6 +377,46 @@
                         tools:ignore="DisableBaselineAlignment">
 
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/layout_name_of_occupant"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColorHint="@color/font_texthint">
+
+                            <EditText
+                                android:id="@+id/editText_name_of_occupant"
+                                style="@style/StyledTilEditText"
+                                android:hint="Name of Occupant /person met at site"
+                                android:inputType="text"
+                                android:maxLength="100" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/layout_relation_with_owner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColorHint="@color/font_texthint">
+
+                            <EditText
+                                android:id="@+id/editText_relation_with_owner"
+                                style="@style/StyledTilEditText"
+                                android:hint="Relation With Owner"
+                                android:inputType="text"
+                                android:maxLength="50" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/control_padding"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        tools:ignore="DisableBaselineAlignment">
+
+                        <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/layout_plotno"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"

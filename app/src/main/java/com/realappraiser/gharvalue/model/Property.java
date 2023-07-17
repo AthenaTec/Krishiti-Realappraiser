@@ -741,6 +741,17 @@ public class Property {
     @ColumnInfo(name = "NameofVendorId")
     private Integer NameofVendorId;
 
+
+    @SerializedName("NameOfOccupant")
+    @Expose
+    @ColumnInfo(name = "NameOfOccupant")
+    private String nameOfOccupant;
+
+    @SerializedName("RelationWithOwner")
+    @Expose
+    @ColumnInfo(name = "RelationWithOwner")
+    private String relationWithOwner;
+
     public String getNameofVendor() {
         return NameofVendor;
     }
@@ -2190,4 +2201,19 @@ public class Property {
         this.sameAsDocumentSetBack = sameAsDocumentSetBack;
     }
 
+    public String getNameOfOccupant() {
+        return nameOfOccupant;
+    }
+
+    public void setNameOfOccupant(String nameOfOccupant) {
+        this.nameOfOccupant = nameOfOccupant;
+    }
+
+    public String getRelationWithOwner() {
+        return relationWithOwner;
+    }
+
+    public void setRelationWithOwner(String relationWithOwner) {
+        this.relationWithOwner = relationWithOwner;
+    }
 }
